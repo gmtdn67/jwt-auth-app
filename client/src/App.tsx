@@ -37,11 +37,9 @@ const App: FC = () => {
       </div>
     )
   }
-
   return (
     <div>
       <h1>{store.isAuth ? `Пользователь авторизован ${store.user.email}` : 'Пользователь не авторизован'}</h1>
-      <h2>{store.user.isActivated}</h2>
       <h1>{store.user.isActivated ? 'Аккаунт подтвержден по почте' : 'Подтвердите аккаунт по почте'}</h1>
       <button onClick={() => store.logout()}>Выйти</button>
       <div>

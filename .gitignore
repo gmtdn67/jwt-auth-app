@@ -1,10 +1,6 @@
 # Node modules
 node_modules/
+*/node_modules/
 **/node_modules/
 
-# Другие типичные игноры для Node.js проектов
 .env
-.dist
-.build
-coverage
-*.log

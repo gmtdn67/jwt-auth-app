@@ -1,0 +1,8 @@
+{
+  "welcome": "Welcome!",
+  "title": "JWT-Auth-app",
+  "email": "Email",
+  "password": "Password",
+  "login": "Login",
+  "registration": "Registration"
+}

@@ -1,9 +1,11 @@
 import React, { FC, useContext, useEffect, useState } from 'react';
-import LoginForm from './components/LoginForm';
+import LoginForm from './components/LoginForm/LoginForm';
 import { Context } from '.';
 import { observer } from 'mobx-react-lite';
 import { IUser } from './models/IUser';
 import UserService from './services/UserService';
+import Layout from './components/ui/Layout/Layout';
+import Button from './components/ui/Button/Button';
 
 const App: FC = () => {
 
@@ -31,10 +33,9 @@ const App: FC = () => {
 
   if (!store.isAuth) {
     return (
-      <div>
+      <Layout>
         <LoginForm />
-        <button onClick={getUsers}>Получить список пользователей</button>
-      </div>
+      </Layout>
     )
   }
   return (

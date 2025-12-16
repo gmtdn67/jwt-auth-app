@@ -1,0 +1,15 @@
+.switchers {
+    margin-top: 10px;
+}
+
+.lang {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.lang:hover {
+    color: lightgray;
+}

@@ -1,7 +1,8 @@
-import React, { createContext } from 'react';
+import React, { createContext, Suspense } from 'react';
 import { createRoot }from 'react-dom/client';
 import App from './App';
 import Store from './store/store';
+import './i18n'
 
 interface State {
     store: Store

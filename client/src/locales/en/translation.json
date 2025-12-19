@@ -4,5 +4,11 @@
   "email": "Email",
   "password": "Password",
   "login": "Login",
-  "registration": "Registration"
+  "registration": "Registration",
+  "user": "User",
+  "authorized": "is authorized",
+  "confirmed": "Account confirmed by email",
+  "to confirm": "Confirm your account by email",
+  "userslist": "Get users list",
+  "logout": "Logout"
 }

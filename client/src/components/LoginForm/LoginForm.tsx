@@ -7,6 +7,7 @@ import cls from "./LoginForm.module.css"
 import Text from '../ui/Text/Text'
 import { useTranslation } from "react-i18next";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
+import Card from "../Card/Card";
 
 const LoginForm: FC = () => {
   const [email, setEmail] = useState("");
@@ -15,7 +16,7 @@ const LoginForm: FC = () => {
   const { store } = useContext(Context);
 
   return (
-  <div className={cls.loginForm}>
+  <Card className={cls.loginForm}>
     <Text text="JWT-Auth-app" title={t('welcome')}/>
       <Input
         value={email}
@@ -39,8 +40,7 @@ const LoginForm: FC = () => {
       >
         {t('registration')}
       </Button>
-      <LangSwitcher />
-    </div>
+    </Card>
   );
 };
 

@@ -6,11 +6,15 @@ import { IUser } from './models/IUser';
 import UserService from './services/UserService';
 import Layout from './components/ui/Layout/Layout';
 import Button from './components/ui/Button/Button';
+import Card from './components/Card/Card';
+import { useTranslation } from 'react-i18next';
+import LangSwitcher from './components/LangSwitcher/LangSwitcher';
 
 const App: FC = () => {
 
   const {store} = useContext(Context)
   const [users, setUsers] = useState<IUser[]>([])
+  const { t } = useTranslation();
 
   useEffect( () => {
     if (localStorage.getItem('token')) {
@@ -39,19 +43,22 @@ const App: FC = () => {
     )
   }
   return (
-    <div>
-      <h1>{store.isAuth ? `Пользователь авторизован ${store.user.email}` : 'Пользователь не авторизован'}</h1>
-      <h1>{store.user.isActivated ? 'Аккаунт подтвержден по почте' : 'Подтвердите аккаунт по почте'}</h1>
-      <button onClick={() => store.logout()}>Выйти</button>
+    <Layout>
+      <Card>
+      <LangSwitcher />
+      <h1>{store.isAuth ? `${t('user')} ${store.user.email} ${t('authorized')}` : 'Пользователь не авторизован'}</h1>
+      <h1>{store.user.isActivated ? `${t('confirmed')}` : `${t('to confirm')}`}</h1>
+      <Button onClick={() => store.logout()}>{t('logout')}</Button>
       <div>
-        <button onClick={getUsers}>Получить список пользователей</button>
+        <Button onClick={getUsers}>{t('userslist')}</Button>
       </div>
       <div>
         {users.map( user => 
-          <div key={user.email}>{user.email}</div>
+          <Card key={user.email}>{user.email}</Card>
         )}
       </div>
-    </div>
+      </Card>
+    </Layout>
   );
 }
 

@@ -9,11 +9,12 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input: FC<InputProps> = (props) => {
-  const { onChange, type, value, placeholder, ...otherProps } = props;
+  const { onChange, type, value, placeholder, className, ...otherProps } = props;
+  const inputClassName = className ? `${cls.input} ${className}` : cls.input;
 
   return (
     <input
-      className={cls.input}
+      className={inputClassName}
       type={type}
       placeholder={placeholder}
       value={value}

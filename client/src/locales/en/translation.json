@@ -10,5 +10,15 @@
   "confirmed": "Account confirmed by email",
   "to confirm": "Confirm your account by email",
   "userslist": "Get users list",
-  "logout": "Logout"
+  "logout": "Logout",
+  "errors": {
+    "userNotFound": "User not found",
+    "wrongPassword": "Wrong password",
+    "userExists": "User with this email already exists",
+    "invalidCredentials": "Invalid email or password",
+    "loginError": "Login error",
+    "registrationError": "Registration error",
+    "validationError": "Validation error",
+    "required": "This field is required"
+  }
 }

@@ -1,15 +1,26 @@
 .switchers {
-    margin-top: 10px;
+    display: flex;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.1);
 }
 
 .lang {
     border: none;
     background: transparent;
-    font-size: 20px;
+    font-size: 0.875rem;
     font-weight: 600;
     cursor: pointer;
+    color: #667eea;
+    padding: 0.25rem 0.75rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
 }
 
 .lang:hover {
-    color: lightgray;
+    background: rgba(102, 126, 234, 0.1);
+    color: #764ba2;
 }

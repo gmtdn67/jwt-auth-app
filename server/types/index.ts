@@ -1,4 +1,4 @@
-import { Document } from 'mongoose';
+import { Document, Types } from 'mongoose';
 
 // User types
 export interface IUser extends Document {
@@ -16,7 +16,7 @@ export interface IUserDto {
 
 // Token types
 export interface IToken extends Document {
-  user: string;
+  user: Types.ObjectId | string;
   refreshToken: string;
 }
 

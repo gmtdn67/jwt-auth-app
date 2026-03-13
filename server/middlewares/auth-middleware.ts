@@ -1,8 +1,8 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, NextFunction } from 'express';
 import ApiError from '../exceptions/api-error';
 import tokenService from '../service/token-service';
 
-export default function (req: Request, res: Response, next: NextFunction): void {
+export default function (req: Request, next: NextFunction): void {
   try {
     const authorizationHeader = req.headers.authorization;
     if (!authorizationHeader) {

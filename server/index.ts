@@ -23,7 +23,7 @@ app.use(
 app.use('/api', router);
 app.use(errorMiddleware);
 
-const start = async (): Promise<void> => {
+/* const start = async (): Promise<void> => {
   try {
     if (!process.env.DB_URL) {
       throw new Error('DB_URL is not defined in environment variables');
@@ -35,5 +35,6 @@ const start = async (): Promise<void> => {
   }
 };
 
-start();
+start(); */
 
+export default app;

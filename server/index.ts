@@ -17,8 +17,12 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: process.env.CLIENT_URL,
-  })
+    origin: (origin, callback) => {
+      const allowedOrigins = [
+      process.env.CLIENT_URL,
+      'https://jwt-auth-app-client.netlify.app/'
+  ]}
+})
 );
 app.use('/api', router);
 app.use(errorMiddleware);
@@ -42,7 +46,7 @@ if (!process.env.DB_URL) {
 } else {
   mongoose
     .connect(process.env.DB_URL)
-    .then(() => console.log('MongoDB connected'))
+    .then(() => console.log(`MongoDB connected ${PORT}`))
     .catch((err) => console.error('MongoDB connection error:', err));
 }
 

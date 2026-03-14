@@ -12,7 +12,7 @@ const App: FC = () => {
     if (localStorage.getItem('token')) {
       store.checkAuth();
     }
-  }, []);
+  }, [store]);
 
   if (store.isLoading) {
     return (

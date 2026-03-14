@@ -54,7 +54,7 @@ export default class Store {
             return { emailError: message, passwordError: null }
         }
         
-        if (lowerMessage.includes('неверный пароль') || lowerMessage.includes('wrong password') || lowerMessage.includes('неверный') && lowerMessage.includes('пароль')) {
+        if (lowerMessage.includes('неверный пароль') || lowerMessage.includes('wrong password') || (lowerMessage.includes('неверный') && lowerMessage.includes('пароль'))) {
             return { emailError: null, passwordError: message }
         }
         

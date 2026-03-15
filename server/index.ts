@@ -19,9 +19,17 @@ app.use(
     credentials: true,
     origin: (origin, callback) => {
       const allowedOrigins = [
-      process.env.CLIENT_URL,
-      'https://jwt-auth-app-client.netlify.app/'
-  ]}
+        process.env.CLIENT_URL,
+        'https://jwt-auth-app-client.netlify.app/',
+        'http://localhost:3000'
+      ].filter(Boolean)
+
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true)
+      } else {
+        callback(new Error('Not allowed by CORS'))
+      }
+}
 })
 );
 app.use('/api', router);

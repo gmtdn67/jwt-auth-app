@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { AuthResponse } from '../models/response/AuthResponse';
 
-export const API_URL = 'https://jwt-auth-app-rho.vercel.app/api'
+export const API_URL = 'https://jwt-auth-htqxgc306-gmt9ns-projects.vercel.app/'
 
 const $api = axios.create({
     withCredentials: true,          // чтобы cookie цеплялись к каждому запросу
